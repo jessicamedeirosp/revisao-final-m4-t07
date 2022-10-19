@@ -1,3 +1,17 @@
-import { createContext } from "react";
+import { createContext, useContext, useState } from "react";
 
-export const TarefasContexto = createContext({})
+const TarefasContexto = createContext({})
+
+export function TarefasProvider({children}) {
+    const [tarefas, setTarefas] = useState([])
+
+    return (
+        <TarefasContexto.Provider value={{tarefas, setTarefas}}>
+            {children}
+        </TarefasContexto.Provider>
+    )
+}
+// hook => fornece algo
+export function useTarefas()  {
+    return useContext(TarefasContexto)
+}

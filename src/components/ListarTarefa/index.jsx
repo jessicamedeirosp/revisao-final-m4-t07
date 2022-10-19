@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { TarefasContexto } from "../../Contexts/tarefaContexto";
+import {  useTarefas } from "../../Contexts/tarefaContexto";
 
 export function ListarTarefa() {
-    const {tarefas} = useContext(TarefasContexto);
+  const {tarefas} = useTarefas();
 
     return (
        <ul>
